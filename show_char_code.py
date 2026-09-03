@@ -27,7 +27,7 @@ def show_character_code(view):
     if len(selection) == 0:
         view.erase_status(STATUS_CHARCODE)
         return
-    selected = view.substr(selection[0].a)
+    selected = view.substr(selection[0].b)
     char_code = ord(selected)
     if _settings.get(SETT_MODE) == SHOW_HEX_ONLY:
         fmt_str = '0x{0:02X}' if char_code <= 0xFF else '0x{0:04X}' if char_code <= 0xFFFF else '0x{0:06X}'
